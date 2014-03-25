@@ -1,0 +1,467 @@
+GNU Octave, version 3.2.4
+Copyright (C) 2009 John W. Eaton and others.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type `warranty'.
+
+Octave was configured for "i686-pc-mingw32".
+
+Additional information about Octave is available at http://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit http://www.octave.org/help-wanted.html
+
+Report bugs to <bug@octave.org> (but first, please read
+http://www.octave.org/bugs.html to learn how to write a helpful report).
+
+For information about changes from previous versions, type `news'.
+
+>>> 3*cos(sqrt(4.7))
+ans = -1.6869
+>>> format long
+>>> 3*cos(sqrt(4.7))
+ans = -1.68686892236893
+>>> format short
+>>> 3*cos(sqrt(4.7))
+ans = -1.6869
+>>> a=3-floor(exp(2.9))
+a = -15
+>>> b=sin a
+>>>parse error:
+
+  syntax error
+
+>>> b=sin a
+          ^
+
+>>> b=sin(a)
+b = -0.65029
+>>> b=sin(a);
+>>> 2*b^2
+ans =  0.84575
+>>> A=[1 2 3;4 5 6;7 8 9]
+A =
+
+   1   2   3
+   4   5   6
+   7   8   9
+
+>>> A=[1 2 3
+>>> 4 5 6
+>>> 7 8 9]
+A =
+
+   1   2   3
+   4   5   6
+   7   8   9
+
+>>> Z=zeros(3.5)
+Z =
+
+   0   0   0
+   0   0   0
+   0   0   0
+
+>>> Z=zeros(3,5)
+Z =
+
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+
+>>> X=ones(3,5)
+X =
+
+   1   1   1   1   1
+   1   1   1   1   1
+   1   1   1   1   1
+
+>>> Y=0:0.5:2
+Y =
+
+    0.00000    0.50000    1.00000    1.50000    2.00000
+
+>>> A(2,3)
+ans =  6
+>>> A(2,2)=tan(7.8)
+A =
+
+    1.0000    2.0000    3.0000
+    4.0000   18.5068    6.0000
+    7.0000    8.0000    9.0000
+
+>>> B=[1 2
+>>> 3 4]
+B =
+
+   1   2
+   3   4
+
+>>> C=B
+C =
+
+   1   2
+   3   4
+
+>>> 3*(B*C)*3
+ans =
+
+    63    90
+   135   198
+
+>>> 3*(B*C)^3
+ans =
+
+   17229   25110
+   37665   54894
+
+>>> B
+B =
+
+   1   2
+   3   4
+
+>>> B
+B =
+
+   1   2
+   3   4
+
+>>> C
+C =
+
+   1   2
+   3   4
+
+>>> A([1 3],[1 3])
+ans =
+
+   1   3
+   7   9
+
+>>> B
+B =
+
+   1   2
+   3   4
+
+>>> C
+C =
+
+   1   2
+   3   4
+
+>>> C=B'
+C =
+
+   1   3
+   2   4
+
+>>> 3*(B*C)^3
+ans =
+
+   13080   29568
+   29568   66840
+
+>>> B*C
+ans =
+
+    5   11
+   11   25
+
+>>> A=[1 2
+>>> 3 4]
+A =
+
+   1   2
+   3   4
+
+>>> A^2
+ans =
+
+    7   10
+   15   22
+
+>>> A.^2
+ans =
+
+    1    4
+    9   16
+
+>>> cos(A/2)
+ans =
+
+   0.877583   0.540302
+   0.070737  -0.416147
+
+>>> cos(A./2)
+ans =
+
+   0.877583   0.540302
+   0.070737  -0.416147
+
+>>> z=-3-j*4
+z = -3 - 4i
+>>> z_real=real(z)
+z_real = -3
+>>> z_imag=imag(z)
+z_imag = -4
+>>> z_mag=sqrt(z_real^2+z_imag^2)
+z_mag =  5
+>>> z_mag=sqrt(z*conj(z))
+z_mag =  5
+>>> z_mag=abs(z)
+z_mag =  5
+>>> z_rad=angle(z)
+z_rad = -2.2143
+>>> z_deg=angle(z)*180/pi
+z_deg = -126.87
+>>> z_rad=atan2(z_imag,z_real)
+z_rad = -2.2143
+>>> z_rad=atan2(z_imag,z_real)
+z_rad = -2.2143
+>>> z_rad=atan2(z_real,z_imag)
+z_rad = -2.4981
+>>> m=s;eye(m)
+>>>error: `s' undefined near line 98 column 3
+>>> m=5;eye(m)
+ans =
+
+Diagonal Matrix
+
+   1   0   0   0   0
+   0   1   0   0   0
+   0   0   1   0   0
+   0   0   0   1   0
+   0   0   0   0   1
+
+>>> x=[2 4 3 8];diag(x)
+ans =
+
+Diagonal Matrix
+
+   2   0   0   0
+   0   4   0   0
+   0   0   3   0
+   0   0   0   8
+
+>>> x=[2 4 6 8];diag(x)
+ans =
+
+Diagonal Matrix
+
+   2   0   0   0
+   0   4   0   0
+   0   0   6   0
+   0   0   0   8
+
+>>> B=[1 2 3
+>>> 0 4 5
+>>> 0 0 6]
+B =
+
+   1   2   3
+   0   4   5
+   0   0   6
+
+>>> B(2,:)
+ans =
+
+   0   4   5
+
+>>> B(:,3)
+ans =
+
+   3
+   5
+   6
+
+>>> A=[2 3
+>>> 4 5
+>>> 0 6]
+A =
+
+   2   3
+   4   5
+   0   6
+
+>>> r=[1 0 0]
+r =
+
+   1   0   0
+
+>>> c=r'
+c =
+
+   1
+   0
+   0
+
+>>> B=[C A]
+>>>error: number of rows must match (3 != 2) near line 117, column 7
+>>> B=[c A]
+B =
+
+   1   2   3
+   0   4   5
+   0   0   6
+
+>>> x=0:0.1:pi;
+>>> y=cos(x)
+y =
+
+ Columns 1 through 7:
+
+   1.000000   0.995004   0.980067   0.955336   0.921061   0.877583   0.825336
+
+ Columns 8 through 14:
+
+   0.764842   0.696707   0.621610   0.540302   0.453596   0.362358   0.267499
+
+ Columns 15 through 21:
+
+   0.169967   0.070737  -0.029200  -0.128844  -0.227202  -0.323290  -0.416147
+
+ Columns 22 through 28:
+
+  -0.504846  -0.588501  -0.666276  -0.737394  -0.801144  -0.856889  -0.904072
+
+ Columns 29 through 32:
+
+  -0.942222  -0.970958  -0.989992  -0.999135
+
+>>> z=cos(x).^2;
+>>> plot(x,y,x,z,'0')
+>>> plot(x,y,x,z,´0´')
+>>>error: invalid character `´' (ASCII 180) near line 128, column 15
+parse error:
+
+  syntax error
+
+>>> plot(x,y,x,z,´0´')
+                 ^
+
+>>> plot(x,y,x,z,´0´)
+>>>error: invalid character `´' (ASCII 180) near line 129, column 15
+parse error:
+
+  syntax error
+
+>>> plot(x,y,x,z,´0´)
+                 ^
+
+>>> plot(x,y,x,z,'0')
+>>> plot(x,y,x,z,"0")
+>>> plot(x,y,x,z,0)
+>>> plot(x,y,x,z,o)
+>>>error: `o' undefined near line 136 column 14
+error: evaluating argument list element number 5
+error: evaluating argument list element number 1
+>>> plot(x,y,x,z,'o')
+>>> plot(x,y,,'x'x,z,'o')
+>>>parse error:
+
+  syntax error
+
+>>> plot(x,y,,'x'x,z,'o')
+             ^
+
+>>> plot(x,y,'x',x,z,'o')
+>>> fplot('tanh',[-2,2])
+>>> fplot('sin',[-2,2])
+>>> t=0:0.2:2*pi;
+>>> plot(2*cos(t),3*sin(t))
+>>> t=0.1:0.1:4*pi
+t =
+
+ Columns 1 through 6:
+
+     0.10000     0.20000     0.30000     0.40000     0.50000     0.60000
+
+ Columns 7 through 12:
+
+     0.70000     0.80000     0.90000     1.00000     1.10000     1.20000
+
+ Columns 13 through 18:
+
+     1.30000     1.40000     1.50000     1.60000     1.70000     1.80000
+
+ Columns 19 through 24:
+
+     1.90000     2.00000     2.10000     2.20000     2.30000     2.40000
+
+ Columns 25 through 30:
+
+     2.50000     2.60000     2.70000     2.80000     2.90000     3.00000
+
+ Columns 31 through 36:
+
+     3.10000     3.20000     3.30000     3.40000     3.50000     3.60000
+
+ Columns 37 through 42:
+
+     3.70000     3.80000     3.90000     4.00000     4.10000     4.20000
+
+ Columns 43 through 48:
+
+     4.30000     4.40000     4.50000     4.60000     4.70000     4.80000
+
+ Columns 49 through 54:
+
+     4.90000     5.00000     5.10000     5.20000     5.30000     5.40000
+
+ Columns 55 through 60:
+
+     5.50000     5.60000     5.70000     5.80000     5.90000     6.00000
+
+ Columns 61 through 66:
+
+     6.10000     6.20000     6.30000     6.40000     6.50000     6.60000
+
+ Columns 67 through 72:
+
+     6.70000     6.80000     6.90000     7.00000     7.10000     7.20000
+
+ Columns 73 through 78:
+
+     7.30000     7.40000     7.50000     7.60000     7.70000     7.80000
+
+ Columns 79 through 84:
+
+     7.90000     8.00000     8.10000     8.20000     8.30000     8.40000
+
+ Columns 85 through 90:
+
+     8.50000     8.60000     8.70000     8.80000     8.90000     9.00000
+
+ Columns 91 through 96:
+
+     9.10000     9.20000     9.30000     9.40000     9.50000     9.60000
+
+ Columns 97 through 102:
+
+     9.70000     9.80000     9.90000    10.00000    10.10000    10.20000
+
+ Columns 103 through 108:
+
+    10.30000    10.40000    10.50000    10.60000    10.70000    10.80000
+
+ Columns 109 through 114:
+
+    10.90000    11.00000    11.10000    11.20000    11.30000    11.40000
+
+ Columns 115 through 120:
+
+    11.50000    11.60000    11.70000    11.80000    11.90000    12.00000
+
+ Columns 121 through 125:
+
+    12.10000    12.20000    12.30000    12.40000    12.50000
+
+>>> plot3(2*cos(t),t.^2,1./t)
+>>> x=-pi:0.1:pi;
+>>> y=x;
+>>> [x,y]=meshgrid(x,y);
+>>> z=sin(cos(x+y));
+>>> mesh(z)
+>>>
